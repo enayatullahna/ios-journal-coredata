@@ -10,13 +10,13 @@
         <!--Journal-->
         <scene sceneID="Zbu-8F-4ad">
             <objects>
-                <tableViewController id="CPy-Tf-pqg" sceneMemberID="viewController">
+                <tableViewController id="CPy-Tf-pqg" customClass="EntriesTableViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="qS4-TE-kvi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalCell" rowHeight="85" id="sEc-bU-vBY">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="JournalCell" rowHeight="85" id="sEc-bU-vBY" customClass="EntryTableViewCell" customModule="Journal" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sEc-bU-vBY" id="BTu-WH-KpV">
@@ -62,6 +62,12 @@
                                         <constraint firstItem="aeb-rI-e4o" firstAttribute="leading" secondItem="BTu-WH-KpV" secondAttribute="leadingMargin" id="z28-Qz-f7i"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dateLable" destination="jVD-gT-IQh" id="Pap-50-Xih"/>
+                                    <outlet property="detailLable" destination="nNK-wr-7AZ" id="cLw-O3-cIv"/>
+                                    <outlet property="titleLabel" destination="Cls-wG-WKF" id="Tf8-WW-DcW"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="ELl-Mu-vRg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -69,13 +75,16 @@
                             <outlet property="delegate" destination="CPy-Tf-pqg" id="kEf-21-z14"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Journal" id="7CK-FB-hd2">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="tdJ-gh-gmy">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Journal" id="kEh-Zg-gHn">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yMg-f3-xyJ">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="dst-eL-StK"/>
+                                <action selector="addJournal:" destination="CPy-Tf-pqg" id="o4J-e6-dK4"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="5HP-p0-AH1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pex-9f-vPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,13 +109,13 @@
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EntryDetailViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="ehn-AE-oyI">
-                                <rect key="frame" x="8" y="148" width="398" height="464"/>
+                                <rect key="frame" x="8" y="148" width="398" height="415"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qqb-oV-4ZQ">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
@@ -114,7 +123,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XsY-kp-Ncd">
-                                        <rect key="frame" x="0.0" y="52" width="398" height="412"/>
+                                        <rect key="frame" x="0.0" y="52" width="398" height="363"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -133,12 +142,23 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="PS8-42-oVx">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="x86-N9-zID"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Mdd-R8-hjB">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="BYZ-38-t0r" id="GRT-0d-dm8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailTextView" destination="XsY-kp-Ncd" id="GkU-bu-2Ar"/>
+                        <outlet property="titleTextField" destination="Qqb-oV-4ZQ" id="Tv1-Nf-Veb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="126" y="113"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5HP-p0-AH1"/>
+    </inferredMetricsTieBreakers>
 </document>
