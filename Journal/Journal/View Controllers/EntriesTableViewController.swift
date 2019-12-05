@@ -87,8 +87,6 @@ class EntriesTableViewController: UITableViewController {
     }
     */
     
-    @IBAction func addJournal(_ sender: Any) {
-    }
     
 
 }
