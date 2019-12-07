@@ -30,15 +30,15 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="25"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cls-wG-WKF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="324" height="25"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="216" height="25"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVD-gT-IQh">
-                                                            <rect key="frame" x="332" y="0.0" width="42" height="25"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label      " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVD-gT-IQh">
+                                                            <rect key="frame" x="224" y="0.0" width="150" height="25"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="42" id="lNJ-d7-MOY"/>
+                                                                <constraint firstAttribute="width" constant="150" id="lNJ-d7-MOY"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -66,7 +66,7 @@
                                     <outlet property="dateLable" destination="jVD-gT-IQh" id="Pap-50-Xih"/>
                                     <outlet property="detailLable" destination="nNK-wr-7AZ" id="cLw-O3-cIv"/>
                                     <outlet property="titleLabel" destination="Cls-wG-WKF" id="Tf8-WW-DcW"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="ELl-Mu-vRg"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="JournalCellDetail" id="ELl-Mu-vRg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -79,7 +79,7 @@
                     <navigationItem key="navigationItem" title="Journal" id="kEh-Zg-gHn">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="yMg-f3-xyJ">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="5HP-p0-AH1"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="AddDetail" id="5HP-p0-AH1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -169,6 +169,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5HP-p0-AH1"/>
+        <segue reference="ELl-Mu-vRg"/>
     </inferredMetricsTieBreakers>
 </document>
