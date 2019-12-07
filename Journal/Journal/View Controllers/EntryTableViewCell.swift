@@ -17,15 +17,32 @@ class EntryTableViewCell: UITableViewCell {
     
     
     
+    var entry: Entry? {
+        didSet {
+            updateViews()
+        }
+        
+    }
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func updateViews() {
+        guard let entry = entry else {return}
+        // time format
+        let format = DateFormatter()
+        format.dateStyle = .short
+        format.timeStyle = .short
+        
+        titleLabel.text = entry.title
+        dateLable.text = format.string(from: entry.timestamp!)
+        detailLable.text = entry.bodyText
+        
+        
+        
     }
 
 }
