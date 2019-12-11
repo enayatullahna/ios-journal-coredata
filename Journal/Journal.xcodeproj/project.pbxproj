@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E699CDCB2398B1CB00949D84 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699CDCA2398B1CB00949D84 /* CoreDataStack.swift */; };
+		E6AF2CE223A08FE400ADED63 /* EntryRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF2CE123A08FE400ADED63 /* EntryRepresentation.swift */; };
 		E6AF6D63239C0F7800D106AB /* Entry.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6AF6D61239C0F7800D106AB /* Entry.xcdatamodeld */; };
 		E6AF6D65239C101400D106AB /* Entry+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF6D64239C101400D106AB /* Entry+Convenience.swift */; };
 		E6AF6D6B239C10EC00D106AB /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6AF6D6A239C10EC00D106AB /* EntryController.swift */; };
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		E699CDCA2398B1CB00949D84 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E6AF2CDF23A08A6500ADED63 /* Entry 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Entry 2.xcdatamodel"; sourceTree = "<group>"; };
+		E6AF2CE023A08F8D00ADED63 /* Entry 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Entry 3.xcdatamodel"; sourceTree = "<group>"; };
+		E6AF2CE123A08FE400ADED63 /* EntryRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRepresentation.swift; sourceTree = "<group>"; };
 		E6AF6D62239C0F7800D106AB /* Entry.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Entry.xcdatamodel; sourceTree = "<group>"; };
 		E6AF6D64239C101400D106AB /* Entry+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Entry+Convenience.swift"; sourceTree = "<group>"; };
 		E6AF6D6A239C10EC00D106AB /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = SOURCE_ROOT; };
@@ -87,6 +90,7 @@
 			children = (
 				E699CDCA2398B1CB00949D84 /* CoreDataStack.swift */,
 				E6AF6D6C239C1FEC00D106AB /* Helper.swift */,
+				E6AF2CE123A08FE400ADED63 /* EntryRepresentation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +212,7 @@
 				E6AF6D65239C101400D106AB /* Entry+Convenience.swift in Sources */,
 				E6B819EE2398A63900113314 /* EntryDetailViewController.swift in Sources */,
 				E6AF6D6D239C1FEC00D106AB /* Helper.swift in Sources */,
+				E6AF2CE223A08FE400ADED63 /* EntryRepresentation.swift in Sources */,
 				E6B819DC23989F7200113314 /* SceneDelegate.swift in Sources */,
 				E6B819F02398A65500113314 /* EntriesTableViewController.swift in Sources */,
 			);
@@ -410,10 +415,11 @@
 		E6AF6D61239C0F7800D106AB /* Entry.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E6AF2CE023A08F8D00ADED63 /* Entry 3.xcdatamodel */,
 				E6AF2CDF23A08A6500ADED63 /* Entry 2.xcdatamodel */,
 				E6AF6D62239C0F7800D106AB /* Entry.xcdatamodel */,
 			);
-			currentVersion = E6AF2CDF23A08A6500ADED63 /* Entry 2.xcdatamodel */;
+			currentVersion = E6AF2CE023A08F8D00ADED63 /* Entry 3.xcdatamodel */;
 			name = Entry.xcdatamodeld;
 			path = Model/Entry.xcdatamodeld;
 			sourceTree = "<group>";
